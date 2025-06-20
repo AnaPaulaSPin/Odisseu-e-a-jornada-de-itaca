@@ -11,6 +11,7 @@ struct Arvore {
     Arvore* esquerda;
     Arvore* direita;
 };
+
 class ArvoreBinaria{
    Arvore* criarNo(Node* dado);
    Arvore* inserir(Arvore* raiz, Node* dado);

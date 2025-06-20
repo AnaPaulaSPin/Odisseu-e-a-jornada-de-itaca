@@ -8,6 +8,7 @@ struct Node {
     int id;
     string escolha;
     string resultado;
+    int tipoFinal;
 };
 
 struct Lista{
