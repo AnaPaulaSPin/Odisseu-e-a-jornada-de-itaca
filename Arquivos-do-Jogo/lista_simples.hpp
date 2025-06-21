@@ -24,6 +24,7 @@ class ListaSimples{
     ListaSimples(){
         inicio = nullptr;
     }
+    Lista *getInicio();
 
 void InserirElemento(Node *elemento);
 void imprimirElemento();

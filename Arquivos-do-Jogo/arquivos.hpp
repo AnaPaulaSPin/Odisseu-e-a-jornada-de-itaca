@@ -3,10 +3,12 @@
 
 #include <string>
 #include "lista_simples.hpp"
+
 using namespace std;
 
 
 void salvarListaEmArquivo(Lista* inicio, const string& nomeArquivo);
 void carregarListaDeArquivo(ListaSimples& lista, const string& nomeArquivo);
+void salvarHistoria();
 
 #endif

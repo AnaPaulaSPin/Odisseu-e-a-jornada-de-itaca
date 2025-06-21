@@ -4,18 +4,29 @@
 #include <string>
 #include "lista_simples.hpp"
 
-using namespace std;
 
 struct Arvore {
     Node* dado;
-    Arvore* esquerda;
-    Arvore* direita;
+    Arvore* escolha1;
+    Arvore* escolha2;
 };
 
 class ArvoreBinaria{
+    private:
+     Arvore *raiz;
+
+    public:
+   ArvoreBinaria(){
+     raiz = nullptr;
+   }
+
+   Arvore *getRaiz();
+
    Arvore* criarNo(Node* dado);
    Arvore* inserir(Arvore* raiz, Node* dado);
    void imprimirEmOrdem(Arvore* raiz);
+   void imprimirJogo(Arvore* raiz); // Funcao teste para verificar se ta salvadondo a escolha e resultado
+   void inserirArvoreEscolhas(ListaSimples lista); // insere a lista na arvore
 
 };
 
