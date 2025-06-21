@@ -43,13 +43,13 @@ void carregarListaDeArquivo(ListaSimples& lista, const string& nomeArquivo) {
         getline(ss, idStr, ';');
         getline(ss, escolha, ';');
         getline(ss, resultado, ';');
-        getline(ss, tipoFinalStr, ';'); // ✔️ Lê o tipoFinal
+        getline(ss, tipoFinalStr, ';'); 
 
         Node* novo = new Node;
         novo->id = stoi(idStr);
         novo->escolha = escolha;
         novo->resultado = resultado;
-        novo->tipoFinal = stoi(tipoFinalStr); // ✔️ Converte corretamente
+        novo->tipoFinal = stoi(tipoFinalStr);
 
         lista.InserirElemento(novo);
     }

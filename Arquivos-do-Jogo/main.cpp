@@ -6,16 +6,18 @@
 #include <windows.h>
 using namespace std;
 
-ListaSimples lista;
+
 
 //g++ -o main.exe main.cpp
 
 int main(){
-    
+
+     // testes Ana:
+     ListaSimples lista; // para amazernar a lista simples pro jogo
      int opcao;
      carregarListaDeArquivo(lista,"dados.txt");
      lista.imprimirElemento();
-     
+
      system("pause");
      system("cls");
 
