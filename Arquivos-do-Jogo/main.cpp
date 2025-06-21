@@ -6,7 +6,9 @@
 #include <windows.h>
 using namespace std;
 
+ArvoreBinaria estruturaJogo; // arvore do nosso jogo
 
+void jogar(Arvore* raiz); // funcao que roda as escolhas
 
 //g++ -o main.exe main.cpp
 
@@ -14,9 +16,13 @@ int main(){
 
      // testes Ana:
      ListaSimples lista; // para amazernar a lista simples pro jogo
-     int opcao;
+     int opcao; 
+     Arvore *raiz;
      carregarListaDeArquivo(lista,"dados.txt");
      lista.imprimirElemento();
+
+     raiz = estruturaJogo.inserirArvoreEscolhas(lista);
+     cout << endl;
 
      system("pause");
      system("cls");
@@ -52,6 +58,7 @@ int main(){
                 case 1:
                 system("cls");
                 cout << "\n Repetir a sua jornada  ...\n";
+                jogar(raiz);
                 break;
 
                 case 2:
@@ -127,3 +134,51 @@ int main(){
     return 0;
 
 }
+
+void jogar(Arvore* raiz) {
+    Arvore* atual = raiz;
+
+    if (atual == nullptr) {
+        cout << "Arvore vazia, nao ha jogo para executar.\n";
+        return;
+    }
+
+    while (true) {
+        cout << "\n========================\n";
+        cout << "Escolha: " << atual->dado->escolha << endl;
+        cout << atual->dado->resultado << endl;
+
+        // Verifica se é um nó final (sem filhos)
+        if (atual->escolha1 == nullptr && atual->escolha2 == nullptr) {
+            cout << "\n==== FIM DE JOGO ====\n";
+
+            if (atual->dado->tipoFinal == 1) {
+                cout << "🎉 Final BOM!\n";
+            } else if (atual->dado->tipoFinal == 2) {
+                cout << "💀 Final RUIM!\n";
+            } else {
+                cout << "😐 Final neutro.\n";
+            }
+
+            break;
+        }
+
+        // Escolha obrigatória (sempre existem dois caminhos)
+        int opcao;
+        cout << "\nDigite:\n";
+        cout << "1 - "<< atual->escolha1->dado->escolha << "\n";
+        cout << "2 - "<< atual->escolha2->dado->escolha << "\n";
+        cout << "Opcao: ";
+        cin >> opcao;
+
+        if (opcao == 1) {
+            atual = atual->escolha1;
+        } else if (opcao == 2) {
+            atual = atual->escolha2;
+        } else {
+            cout << "Opcao invalida! Escolha 1 ou 2.\n";
+        }
+    }
+    system("pause");
+}
+

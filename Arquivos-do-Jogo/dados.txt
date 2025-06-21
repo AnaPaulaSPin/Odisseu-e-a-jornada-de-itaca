@@ -1,7 +1,7 @@
-4;A ilha misteriosa;Uma ilha surge no horizonte Decida seu caminho;0;
-2;Enfrentar o Ciclope;Voce encara o Ciclope;0;
-6;Evitar o Ciclope;Voce tenta contornar o perigo;0;
-1;Lutar e vencer;Voce derrota o Ciclope e segue a jornada;1;
-3;Fugir e perder;Voce foge mas perde parte da tripulacao;2;
-5;Encontrar abrigo;Voce encontra uma ilha segura para descansar;1;
-7;Naufragar;Uma tempestade destroi seu navio;2;
+100;A ilha misteriosa;Uma ilha surge no horizonte Decida seu caminho;0;
+35;Enfrentar o Ciclope;Voce encara o Ciclope;0;
+145;Evitar o Ciclope;Voce tenta contornar o perigo;0;
+30;Lutar e vencer;Voce derrota o Ciclope e segue a jornada;1;
+70;Fugir e perder;Voce foge mas perde parte da tripulacao;2;
+140;Encontrar abrigo;Voce encontra uma ilha segura para descansar;1;
+230;Naufragar;Uma tempestade destroi seu navio;2;

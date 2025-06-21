@@ -44,6 +44,26 @@ void ArvoreBinaria:: imprimirEmOrdem(Arvore* raiz){
     
 }
 
+void ArvoreBinaria:: imprimirPreOrdem(Arvore *raiz){
+    if(raiz == nullptr){
+            return;
+        } else{
+            cout << raiz->dado->id << " ";
+           imprimirPreOrdem(raiz->escolha1);
+           imprimirPreOrdem(raiz->escolha2);
+        }
+}
+void ArvoreBinaria:: imprimirPosOrdem(Arvore *raiz){
+      if(raiz == nullptr){
+            return;
+            
+     } else{
+          imprimirPosOrdem(raiz->escolha1);
+          imprimirPosOrdem(raiz->escolha2);
+          cout << raiz->dado->id << " ";
+        }
+}
+
 void ArvoreBinaria::imprimirJogo(Arvore* raiz){
      if (raiz == nullptr) {
         return;
@@ -63,11 +83,15 @@ void ArvoreBinaria::imprimirJogo(Arvore* raiz){
     imprimirJogo(raiz->escolha2);
 }
 
- void ArvoreBinaria:: inserirArvoreEscolhas(ListaSimples lista){
+
+ Arvore* ArvoreBinaria:: inserirArvoreEscolhas(ListaSimples lista){
       Lista *atual = lista.getInicio();
       
     while(atual != nullptr){
        this->raiz = inserir(this->raiz, atual->dado);
        atual = atual->prox;
     }
+    return this->raiz;
  } 
+
+ 

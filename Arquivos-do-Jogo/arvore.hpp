@@ -26,7 +26,10 @@ class ArvoreBinaria{
    Arvore* inserir(Arvore* raiz, Node* dado);
    void imprimirEmOrdem(Arvore* raiz);
    void imprimirJogo(Arvore* raiz); // Funcao teste para verificar se ta salvadondo a escolha e resultado
-   void inserirArvoreEscolhas(ListaSimples lista); // insere a lista na arvore
+   Arvore* inserirArvoreEscolhas(ListaSimples lista); // insere a lista na arvore
+   void imprimirPreOrdem(Arvore *raiz);
+   void imprimirPosOrdem(Arvore *raiz);
+   
 
 };
 
