@@ -2,7 +2,7 @@
 #define ARVORE_HPP
 
 #include <string>
-#include "lista_simples.h"
+#include "lista_simples.hpp"
 
 using namespace std;
 

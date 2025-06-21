@@ -1,3 +1,3 @@
-#include "arvore.h"
+#include "arvore.hpp"
 #include <iostream>
 

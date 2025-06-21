@@ -1,6 +1,6 @@
 #include <iostream>
-#include "arquivos.h"
-#include "arvore.h"
+#include "arquivos.hpp"
+#include "arvore.hpp"
 #include "lista_duplamente.hpp"
 #include <windows.h>
 using namespace std;
