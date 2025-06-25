@@ -1,5 +1,6 @@
 #ifndef MENUS_HPP
 #define MENUS_HPP
+void setColor(int cor);
 
 void exibirMenu1();
 void exibirMenu2();

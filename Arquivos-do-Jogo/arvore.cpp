@@ -1,5 +1,8 @@
 #include "arvore.hpp"
 #include <iostream>
+#include <fstream> 
+#include <string>
+#include <sstream>
 
 using namespace std;
 
@@ -95,3 +98,47 @@ void ArvoreBinaria::imprimirJogo(Arvore* raiz){
  } 
 
  
+// K
+
+ void ArvoreBinaria::gerarResumoParaArquivoScore(const string& nomeArquivo, const string& nomeJogador, int jogos, int vitorias, int derrotas){
+    // atualiza um arquivo de score (nomeArquivo) para um jogador específico (nomeJogador), somando as vitórias, derrotas e jogos.
+    ifstream arquivoEntrada(nomeArquivo); // Abre o arquivo original (nomeArquivo) para leitura. 
+    ofstream arquivoTemp("temp.txt"); // Cria um arquivo temporário chamado "temp.txt" para escrita. 
+
+    bool encontrado = false; // Cria uma variável para marcar se o jogador já existe no arquivo (se foi encontrado).
+    string linha; // Uma variável para armazenar a linha que será lida.
+
+    while (getline(arquivoEntrada, linha)) { // Lê o arquivo linha a linha (cada linha com os dados de um jogador).
+        stringstream ss(linha); //  para "quebrar" a linha em partes separadas por ;.
+        string nome;
+        int j, v, d;
+
+        getline(ss, nome, ';');
+        ss >> j;
+        ss.ignore(); // ignorar o ;
+        ss >> v;
+        ss.ignore();
+        ss >> d;
+        ss.ignore();
+
+        if (nome == nomeJogador) {
+            encontrado = true;
+            j = j + jogos;
+            v = v + vitorias;
+            d = d + derrotas;
+        }
+
+        arquivoTemp << nome << ";" << j << ";" << v << ";" << d << ";\n";
+    }
+
+    if (encontrado == false) {
+        arquivoTemp << nomeJogador << ";" << jogos << ";" << vitorias << ";" << derrotas << ";\n";
+    }
+
+    arquivoEntrada.close();
+    arquivoTemp.close();
+
+    // Substitui o antigo pelo novo
+    remove(nomeArquivo.c_str()); // Remove o arquivo original.
+    rename("temp.txt", nomeArquivo.c_str()); // Renomeia o arquivo temporário (temp.txt) para o nome original do arquivo.
+ }

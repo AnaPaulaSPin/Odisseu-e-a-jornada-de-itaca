@@ -3,6 +3,7 @@
 #include <fstream> 
 #include <sstream>
 #include "arquivos.hpp"
+#include <cstdlib> // se usar atoi
 using namespace std;
 
 void salvarListaEmArquivo(Lista* inicio, const string& nomeArquivo) {
@@ -46,10 +47,10 @@ void carregarListaDeArquivo(ListaSimples& lista, const string& nomeArquivo) {
         getline(ss, tipoFinalStr, ';'); 
 
         Node* novo = new Node;
-        novo->id = stoi(idStr);
+         novo->id = atoi(idStr.c_str());               // alternativa ao stoi
         novo->escolha = escolha;
         novo->resultado = resultado;
-        novo->tipoFinal = stoi(tipoFinalStr);
+       novo->tipoFinal = atoi(tipoFinalStr.c_str()); // alternativa ao stoi
 
         lista.InserirElemento(novo);
     }
@@ -57,5 +58,62 @@ void carregarListaDeArquivo(ListaSimples& lista, const string& nomeArquivo) {
     arquivo.close();
     cout << "Lista carregada do arquivo com sucesso.\n";
 }
+//K
+
+void carregarScore(ListaDupla& lista, const string& nomeArquivo) {
+    ifstream arquivo(nomeArquivo);
+    if (!arquivo.is_open()) {
+        cout << "Arquivo de score nao encontrado.\n";
+        return;
+    }
+
+    string linha;
+    while (getline(arquivo, linha)) {
+        stringstream ss(linha);
+        string nome;
+        int jogos, vitorias, derrotas;
+
+        getline(ss, nome, ';');
+        ss >> jogos;
+        ss.ignore();
+        ss >> vitorias;
+        ss.ignore();
+        ss >> derrotas;
+        ss.ignore();
+
+        lista.inserirOrdenado(nome, jogos, vitorias, derrotas);
+    }
+
+    arquivo.close();
+}
+
+
+
+void carregarResumoParaListaDupla(const string& nomeArquivo, ListaDupla& listaDupla){
+    ifstream arquivo(nomeArquivo);
+    if(arquivo.is_open() == false){
+        cout << "Arquivo não encontrado\n";
+        return;
+    }
+
+string linha;
+
+while (getline(arquivo,linha)){
+    stringstream ss(linha);
+    string nome;
+    int jogos, vitorias, derrotas;
+
+    getline(ss, nome, ',');
+    ss >> jogos;
+    ss.ignore();
+    ss >> vitorias;
+    ss.ignore();
+    ss >> derrotas;
+
+    listaDupla.inserirOrdenado(nome, jogos, vitorias, derrotas);
+    }  
+
+}
+
 
 

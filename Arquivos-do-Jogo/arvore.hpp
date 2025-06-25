@@ -4,7 +4,6 @@
 #include <string>
 #include "lista_simples.hpp"
 
-
 struct Arvore {
     Node* dado;
     Arvore* escolha1;
@@ -30,6 +29,7 @@ class ArvoreBinaria{
    void imprimirPreOrdem(Arvore *raiz);
    void imprimirPosOrdem(Arvore *raiz);
    
+   void gerarResumoParaArquivoScore(const string& nomeArquivo, const string& nomeJogador, int jogos, int vitorias, int derrotas); //K
 
 };
 
