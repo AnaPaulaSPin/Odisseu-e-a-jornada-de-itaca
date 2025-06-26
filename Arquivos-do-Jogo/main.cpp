@@ -65,7 +65,9 @@ void jogar(Arvore* raiz, string nomeJogador) {
             atual = atual->escolha1;
         } else if (opcao == 2) {
             atual = atual->escolha2;
-        } else {
+        } else if(opcao == 3){
+            cout << "Saindo do jogo....\n";
+        }else {
             cout << "Opcao invalida! Escolha 1 ou 2.\n";
         }
     }
@@ -111,13 +113,12 @@ int main(){
     carregarScore(listaDupla, "score.txt");
 
      // testes Ana:
-     ListaSimples lista; // para amazernar a lista simples pro jogo
      int opcao; 
      Arvore *raiz;
-     carregarListaDeArquivo(lista,"dados.txt");
-     lista.imprimirElemento();
+     carregarListaDeArquivo(listaSimples,"dados.txt");
+     listaSimples.imprimirElemento();
 
-     raiz = estruturaJogo.inserirArvoreEscolhas(lista);
+     raiz = estruturaJogo.inserirArvoreEscolhas(listaSimples);
      cout << endl;
 
      system("pause");
