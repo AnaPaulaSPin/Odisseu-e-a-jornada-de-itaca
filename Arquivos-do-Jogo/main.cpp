@@ -20,59 +20,68 @@ void jogar(Arvore* raiz, string nomeJogador) {
     int vitorias = 0, derrotas = 0, jogos = 0;
 
     if (atual == nullptr) {
-        cout << "Arvore vazia, nao ha jogo para executar.\n";
+        cout << "Árvore vazia, não há jogo para executar.\n";
         return;
     }
 
     while (true) {
+        system("cls");
         cout << "\n========================\n";
         cout << "Escolha: " << atual->dado->escolha << endl;
-        cout << atual->dado->resultado << endl;
 
-        // Verifica se é um nó final (sem filhos)
+        //  Verifica se é um nó final
         if (atual->escolha1 == nullptr && atual->escolha2 == nullptr) {
             cout << "\n==== FIM DE JOGO ====\n";
             jogos = 1;
 
+            // imprime o final do jogo:
+            cout << atual->dado->resultado << endl;
+
             if (atual->dado->tipoFinal == 1) {
                 vitorias = 1;
-                cout << "🎉 Final BOM!\n";
+                cout << "🎉 Final BOM!\n\n";
             } else if (atual->dado->tipoFinal == 2) {
                 derrotas = 1;
-                cout << "💀 Final RUIM!\n";
+                cout << "💀 Final RUIM!\n\n";
             } else {
-                cout << "😐 Final neutro.\n";
+                cout << "😐 Final neutro.\n\n";
             }
 
-            //Salvar score ao final do jogo
-
+            // 👉 Salvar score e encerrar
             estruturaJogo.gerarResumoParaArquivoScore("score.txt", nomeJogador, jogos, vitorias, derrotas);
             listaDupla.limparLista();
             carregarScore(listaDupla, "score.txt");
-
             break;
         }
 
-        // Escolha obrigatória (sempre existem dois caminhos)
+        // imprime o resultado da escolha
+        cout << atual->dado->resultado << endl;
+
+        // Mostrar as opções de escolha
         int opcao;
         cout << "\nDigite:\n";
-        cout << "1 - "<< atual->escolha1->dado->escolha << "\n";
-        cout << "2 - "<< atual->escolha2->dado->escolha << "\n";
+        cout << "1 - " << atual->escolha1->dado->escolha << "\n";
+        cout << "2 - " << atual->escolha2->dado->escolha << "\n";
         cout << "Opcao: ";
         cin >> opcao;
 
+        // Atualiza o nó atual com base na escolha
         if (opcao == 1) {
             atual = atual->escolha1;
         } else if (opcao == 2) {
             atual = atual->escolha2;
-        } else if(opcao == 3){
+        } else if (opcao == 3) {
             cout << "Saindo do jogo....\n";
-        }else {
-            cout << "Opcao invalida! Escolha 1 ou 2.\n";
+            break;
+        } else {
+            cout << "Opção inválida! Escolha 1 ou 2.\n";
+            system("pause");
         }
     }
+
     system("pause");
 }
+
 
 // Verificar se nome de jogador já existe no arquivo
  bool nomeExiste(const string& nomeProcurado, const string& nomeArquivo){
@@ -115,8 +124,7 @@ int main(){
      // testes Ana:
      int opcao; 
      Arvore *raiz;
-     carregarListaDeArquivo(listaSimples,"dados.txt");
-     listaSimples.imprimirElemento();
+     carregarListaDeArquivo(listaSimples,"historia.txt");
 
      raiz = estruturaJogo.inserirArvoreEscolhas(listaSimples);
      cout << endl;
