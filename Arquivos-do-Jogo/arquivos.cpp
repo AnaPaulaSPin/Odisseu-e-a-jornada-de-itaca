@@ -56,7 +56,7 @@ void carregarListaDeArquivo(ListaSimples& lista, const string& nomeArquivo) {
     }
 
     arquivo.close();
-    cout << "Lista carregada do arquivo com sucesso.\n";
+    
 }
 //K
 

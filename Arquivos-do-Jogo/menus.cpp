@@ -23,7 +23,7 @@ void exibirMenu1() {
     cout << "\t\t\t\t\t\t\t\t║ 1 - Conhecer o seu passado                 ║" << endl; //Conhecer a História do Jogo; 
     cout << "\t\t\t\t\t\t\t\t║ 2 - Regras dos deuses                      ║" << endl; //Regras do Jogo; 
     cout << "\t\t\t\t\t\t\t\t║ 3 - Continuar a sua jornada                ║" << endl; //Jogar; 
-    cout << "\t\t\t\t\t\t\t\t║ 4 - Verificar o score da sua jornada       ║" << endl; //Verificar o Score do jogo
+    cout << "\t\t\t\t\t\t\t\t║ 4 - Rank global                            ║" << endl; //Verificar o Score do jogo
 
     setColor(12); // vermelho claro
     cout << "\t\t\t\t\t\t\t\t║ 5 - Abandonar a sua história               ║" << endl; //Sair.
