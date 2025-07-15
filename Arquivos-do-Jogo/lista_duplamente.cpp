@@ -82,6 +82,8 @@ void ListaDupla::procurarJogadorPeloNome(string nome){
         cout << atual -> nome << " | Jogos:" << atual -> jogos 
              << " | Vitórias: " << atual-> vitorias
              << " | Derrotas: " << atual -> derrotas << "\n";
+    } else{
+        cout << "Jogador não encontrado!";
     }
 }
 

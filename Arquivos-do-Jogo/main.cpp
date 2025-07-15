@@ -32,7 +32,7 @@ void jogar(Arvore* raiz, string nomeJogador) {
 
         //  Verifica se é um nó final
         if (atual->escolha1 == nullptr && atual->escolha2 == nullptr) {
-            setColor(1); // azul escuro
+            setColor(11); // azul escuro
             cout << "\n==== FIM DE JOGO ====\n";
             jogos = 1;
         
@@ -64,7 +64,7 @@ void jogar(Arvore* raiz, string nomeJogador) {
         }
 
         // imprime o resultado da escolha
-        setColor(1); // azul escuro
+        setColor(11); // azul escuro
         cout << atual->dado->resultado << endl;
 
         // Mostrar as opções de escolha
