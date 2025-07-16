@@ -5,3 +5,4 @@ Ishiganmin;2;0;1;
 Eduardo;1;0;1;
 Jonata;1;0;0;
 Laura;1;0;1;
+Laia;1;0;1;

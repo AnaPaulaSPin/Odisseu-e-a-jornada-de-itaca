@@ -65,7 +65,7 @@ void jogar(Arvore* raiz, string nomeJogador) {
         }
 
         // imprime o resultado da escolha
-        setColor(11); // azul escuro
+        setColor(11); // azul 
         cout << atual->dado->resultado << endl;
 
         // Mostrar as opções de escolha

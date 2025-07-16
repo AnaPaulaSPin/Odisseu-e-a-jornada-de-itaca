@@ -82,10 +82,8 @@ void regras(){
     cout << "\t\t\t\t║ nas listas dos deuses e não poderá mais ser usado.                 ║" << endl;
     cout << "\t\t\t\t║ 2) Tipos de Finais:                                                ║" << endl;
     cout << "\t\t\t\t║    2.1 Final normal não tem pontuação,                             ║" << endl;
-    cout << "\t\t\t\t║    2.2 Final muito ruim perde 2 pontos;                            ║" << endl;
-    cout << "\t\t\t\t║    2.3 final ruim perde 1 ponto;                                   ║" << endl;
-    cout << "\t\t\t\t║    2.4 Final muito bom ganha 2 ponto;                              ║" << endl;
-    cout << "\t\t\t\t║    2.5 Final bom ganha 1 ponto.                                    ║" << endl;
+    cout << "\t\t\t\t║    2.2 final ruim perde 1 ponto;                                   ║" << endl;
+    cout << "\t\t\t\t║    2.3 Final bom ganha 1 ponto.                                    ║" << endl;
     cout << "\t\t\t\t║ 3) A cada final que voce chegar aumenta em 1 o número de jogos.    ║" << endl;
     cout << "\t\t\t\t║ 4) Você não pode voltar atrás em uma escolha, pense com cuidado.   ║" << endl;
     cout << "\t\t\t\t╚════════════════════════════════════════════════════════════════════╝" << endl;
